@@ -1,5 +1,5 @@
 # UltraSword PyGame
-RPG videogame written in Python using PyGame Framework[^1]. Battle logic is based on the popular rock, paper, scissors game. 
+RPG videogame written in Python using PyGame modules[^1]. Battle logic is based on the popular rock, paper, scissors game. 
 The player and CPU need to wait until its time bar is complete, when the bar is full it is your turn to Attack!
 
 <p align="center">
