@@ -20,7 +20,7 @@ def __init__(self, atlas, horizontal_loading, first_frame_position, animation_ty
 AnimatedSprite renders and iterate the animation frames, Animations can be type LOOP, ONE_TIME or STATIC.
 
 ```python
-def __update__(self, delta_time):
+def __update__(self, delta_time):  # updated the animation if it is a non-static
     if self.animation_type != AnimationType.STATIC:
         if self.current_animation_time >= self.frame_duration:
             self.current_frame += 1
@@ -40,11 +40,11 @@ or Vertical alignment.
 
 ```Python
 def __render__(self):
-    if self.horizontal_loading:
+    if self.horizontal_loading:  # horizontal loading applies to the images that are stored in an horizontal fashion
         offset = self.first_frame_position.w * self.current_frame
         return pygame.Rect(self.first_frame_position.x + offset, self.first_frame_position.y,
                            self.first_frame_position.w, self.first_frame_position.h)
-    else:
+    else:  # horizontal loading applies to the images that are stored in a vertical fashion
         offset = self.first_frame_position.h * self.current_frame
         return pygame.Rect(self.first_frame_position.x, self.first_frame_position.y + offset,
                            self.first_frame_position.w, self.first_frame_position.h)
